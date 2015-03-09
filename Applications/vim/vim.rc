@@ -1,0 +1,13 @@
+" Chet's vim RC
+" -------------
+
+" GENERAL ===
+syntax enable		" Set syntax highlighting on
+
+set number		" Set line numbers on
+set cursorline		" Set cursor line on
+set cursorcolumn	" Set cursor column on
+
+" HIGHLIGHT SETTINGS ===
+hi CursorLine cterm=NONE ctermbg=233
+hi CursorColumn cterm=NONE ctermbg=233 
