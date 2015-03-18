@@ -3,10 +3,10 @@
 
 # PATHS ===
 export PATH="$PATH:$HOME/Executables/"
-export SEL_CERT_FILE="/usr/local/share/certs/ca-root-nss.crt"
+export SSL_CERT_FILE="/usr/local/share/certs/ca-root-nss.crt"
 export SSL_CERT_DIR="/usr/local/share/certs/"
 
-# LANGUAGE/SCRIPT ===
+# LANGUAGES/SCRIPT ===
 export LANG='en_US.UTF-8'
 export LOCALE='UTF-8'
 

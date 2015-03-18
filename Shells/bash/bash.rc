@@ -16,54 +16,11 @@ source $bash_config_dir/aliases.rc;
 source $bash_config_dir/envvars.rc;
 source $bash_config_dir/colors.rc;
 source $bash_config_dir/usrfunc.rc;
-source $bash_config_dir/shlopts.rc;
-
-# FUNCTIONS ===
-function last_cmd_status() {
-	case "$?" in
-		0) 	echo "OKAY" ;;
-		130)	echo "INTR" ;;
-		127)	echo "NCMD" ;;
-		*)	echo "FAIL" ;;
-	esac
-}
-
-function col_last_cmd_status() {
-	case "$?" in
-		0) 	echo -e "${col_okay}OKAY${col_reset}" ;;
-		130)	echo -e "${col_other}INTR${col_reset}" ;;
-		127)	echo -e "${col_other}NCMD${col_reset}" ;;
-		*)	echo -e "${col_fail}FAIL${col_reset}" ;;
-	esac
-}
-
-function ps_pad() {
-	if [ $PWD == $HOME ]
-	then
-		ps_dir="~"
-	else
-		ps_dir=$(basename "$PWD")
-	fi
-
-	echo "$USER@$(hostname) ---- $ps_dir " | sed "s/./\ /g;"
-}
-
-# COLOR SETUP ===
-case "$TERM" in
-	xterm-color|xterm-256color) enable_color="yes";;
-	*) enable_color="no";;
-esac
+source $bash_config_dir/rclopts.rc;
+source $bash_config_dir/rclfunc.rc;
 
 # PROMPT SETUP ===
-if [ "$enable_color" == "no" ]
-then
-	PS1="\u@\h \$(last_cmd_status)i \W \$> ";
-	PS2="\$(ps_pad)-> ";
-	PS3="?> ";
-	PS4="DEBUG: ";
-else
-	PS1="${col_b_purple}\u@\h${col_reset} \$(col_last_cmd_status) \W ${col_b_white}\$>${col_reset} ";
-	PS2="$(ps_pad)${col_b_white}->${col_reset} ";
-	PS3="${col_b_white}?>${col_reset} ";
-	PS4="${col_b_green}DEBUG:${col_reset} ";
-fi
+PS1="\[${col_b_yellow}\]\u@\h\[${col_reset}\] \$(last_command_status) \[${col_b_cyan}\]\W\[${col_reset}\] \[${col_b_white}\]\$>\[${col_reset}\] ";
+PS2="\[${col_b_white}\]->\[${col_reset}\] ";
+PS3="\[${col_b_white}\]?>\[${col_reset}\] ";
+PS4="\[${col_b_green}\]DEBUG:\[${col_reset}\] ";
