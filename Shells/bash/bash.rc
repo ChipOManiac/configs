@@ -9,15 +9,15 @@ case $- in
 esac
 
 # VARIABLES ===
-bash_config_dir="/home/chatranga/Configs/Shells/bash/";
+bash_config_dir="/home/chatranga/Configs/Shells/bash";
 
 # SOURCES ===
-source $bash_config_dir/aliases.rc;
-source $bash_config_dir/envvars.rc;
-source $bash_config_dir/colors.rc;
-source $bash_config_dir/usrfunc.rc;
-source $bash_config_dir/rclopts.rc;
-source $bash_config_dir/rclfunc.rc;
+source $bash_config_dir/aliases.sh;
+source $bash_config_dir/envvars.sh;
+source $bash_config_dir/colors.sh;
+source $bash_config_dir/usrfunc.sh;
+source $bash_config_dir/rclopts.sh;
+source $bash_config_dir/rclfunc.sh;
 
 # PROMPT SETUP ===
 PS1="\[${col_b_yellow}\]\u@\h\[${col_reset}\] \$(last_command_status) \[${col_b_cyan}\]\W\[${col_reset}\] \[${col_b_white}\]\$>\[${col_reset}\] ";
