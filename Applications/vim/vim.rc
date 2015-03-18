@@ -10,4 +10,4 @@ set cursorcolumn	" Set cursor column on
 
 " HIGHLIGHT SETTINGS ===
 hi CursorLine cterm=NONE ctermbg=233
-hi CursorColumn cterm=NONE ctermbg=233 
+hi CursorColumn cterm=NONE ctermbg=233
